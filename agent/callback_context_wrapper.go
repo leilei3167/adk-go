@@ -51,8 +51,7 @@ func (c *callbackContextWrapper) WithAgentCancel() (Context, context.CancelFunc)
 
 // WithAgentTimeout implements [Context].
 func (c *callbackContextWrapper) WithAgentTimeout(timeout time.Duration) (Context, context.CancelFunc) {
-	log.Print("WithAgentTimeout() is not supported for callback context")
-	return nil, nil
+	return c.context.WithAgentTimeout(timeout)
 }
 
 // InvocationContext implements [Context].

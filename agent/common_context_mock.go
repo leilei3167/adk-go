@@ -70,12 +70,12 @@ func (c *ContextMock) Branch() string {
 
 // Deadline implements [Context].
 func (c *ContextMock) Deadline() (deadline time.Time, ok bool) {
-	panic("unimplemented")
+	return time.Time{}, false
 }
 
 // Done implements [Context].
 func (c *ContextMock) Done() <-chan struct{} {
-	panic("unimplemented")
+	return nil
 }
 
 // EndInvocation implements [Context].
